@@ -1,14 +1,11 @@
-import mysql.connector
+from conexion.conexion import Conexion
 
-try:
-    conexion = mysql.connector.connect(
-        host="192.168.3.125",
-        user="arturo",
-        password="Pword1",
-        database="distancia"
-    )
-    print("Conexión establecida exitosamente.")
-    conexion.close()
+baseDeDatos = {
+    "driver" : "MySql",
+    "server" : "DESKTOP-GI8HMHT",  # Cambia esto a tu servidor SQL
+    "database" : "IoT",  # Cambia esto a tu base de datos
+    "usuario" : "",
+    "contrasena" : "",
+}
 
-except mysql.connector.Error as err:
-    print("Error en la conexión:", err)
+conection = Conexion(baseDeDatos)
