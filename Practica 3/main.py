@@ -52,7 +52,7 @@ try:
         dist = medir_distancia()
         
         # Insertar la distancia en la base de datos
-        sql = "INSERT INTO distancia (valor) VALUES (%s)"
+        sql = "INSERT INTO distancia (distancia) VALUES (%s)"
         val = (dist,)
         mycursor.execute(sql, val)
         mydb.commit()
