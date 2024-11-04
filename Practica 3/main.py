@@ -64,7 +64,8 @@ except KeyboardInterrupt:
     print("Medición detenida por el usuario.")
 finally:
     query = "SELECT * FROM distancia "
-    datos = mycursor.execute(query)
+    mycursor.execute(query)
+    datos = mycursor.fetchall()
     for i in datos:
         print(i)
     GPIO.cleanup()
