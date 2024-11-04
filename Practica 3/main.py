@@ -48,7 +48,7 @@ def medir_distancia():
     return distancia
 
 try:
-    while True:
+    for i in range(10):
         dist = medir_distancia()
         
         # Insertar la distancia en la base de datos
@@ -63,5 +63,11 @@ try:
 except KeyboardInterrupt:
     print("Medición detenida por el usuario.")
 finally:
+    query = "SELECT * FROM distancia "
+    datos = mycursor.execute(query)
+    for i in datos:
+        print(i)
     GPIO.cleanup()
     mydb.close()
+
+
